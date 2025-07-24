@@ -166,7 +166,7 @@ function Oniduuru() {
             <p className="text-gray-400 mb-4">
               Connecting Africa's finest talents with global opportunities.
             </p>
-            <div className="flex space-x-4 text-2xl ml-[60px]">
+            <div className="flex space-x-4 text-2xl ml-[100px] md:ml-[60px]">
               <a href="#" className="hover:text-white transition duration-300">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
