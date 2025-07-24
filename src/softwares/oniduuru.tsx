@@ -15,6 +15,7 @@ import {
 import { ImageProps,OniduuruRoutes } from "../utils/models/stores";
 import OniduuruQR from "../components/OniduuruQR";
 
+
 function Oniduuru() {
    const [showModal, setShowModal] = useState(false);
 
@@ -22,7 +23,7 @@ function Oniduuru() {
     <div className="min-h-screen bg-gradient-to-br from-[#fefce8] via-[#fef3c7] to-[#fcd34d] text-gray-800">
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 bg-[#1e293b] text-white shadow-md">
-        <div className="text-2xl font-bold">Oniduuru Marketplace</div>
+        <div className="text-2xl font-bold"> ∯ Oniduuru Marketplace</div>
         <button   onClick={() => setShowModal(true)} className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300">QR scan</button>
       </nav>
 
