@@ -201,10 +201,10 @@ function Oniduuru() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition duration-300">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition duration-300">FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition duration-300">Support</a></li>
-              <li><a href="#" className="hover:text-white transition duration-300">Privacy Policy</a></li>
+              <li><a className="hover:text-white transition duration-300">Blog</a></li>
+              <li><a  className="hover:text-white transition duration-300">FAQ</a></li>
+              <li><a  className="hover:text-white transition duration-300">Support</a></li>
+              <li><a  className="hover:text-white transition duration-300">Privacy Policy</a></li>
               <li><a onClick={() => navigate("/landing-pages/oniduuru-terms-and-conditions")}  className="hover:text-white transition duration-300">Terms of Service</a></li>
             </ul>
           </div>
@@ -216,10 +216,10 @@ function Oniduuru() {
               <i className="fas fa-map-marker-alt mr-2"></i> 123 Africa Blvd, Lagos, Nigeria
             </p>
             <p className="text-gray-400 mb-2">
-              <i className="fas fa-envelope mr-2"></i> info@oniduuru.com
+              <i className="fas fa-envelope mr-2"></i> info@shoftafrica.com
             </p>
             <p className="text-gray-400 mb-2">
-              <i className="fas fa-phone mr-2"></i> +234 800 123 4567
+              <i className="fas fa-phone mr-2"></i> +234-903-125-1953
             </p>
           </div>
         </div>
