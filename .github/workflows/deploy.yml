@@ -22,26 +22,34 @@ jobs:
             cd /var/www/ShoftAfricaAppsCatalogue || exit
             git pull origin main
             
-            # 2. Cleanup old Docker junk to free up RAM/Disk space
-            # This prevents the disk from filling up with failed builds
+            # 2. Deep Clean old files and Docker junk to maximize RAM
+            rm -rf node_modules build
             docker system prune -af
             
-            # 3. Build ON the VPS (Bypasses Docker 254 error)
-            # Uses your 2G swap natively
+            # 3. Install & Build (Native VPS power using your 2G Swap)
             npm install --legacy-peer-deps
             npm run build
             
-            # 4. Create a Simple Dockerfile on the fly
+            # 4. Create the simple Dockerfile with the React Router Fix (prevents 404s)
+            # We write a custom Nginx config that redirects all requests to index.html
             echo "FROM nginx:stable-alpine
+            RUN echo 'server { \
+                listen 80; \
+                location / { \
+                    root /usr/share/nginx/html; \
+                    index index.html index.htm; \
+                    try_files \$uri \$uri/ /index.html; \
+                } \
+            }' > /etc/nginx/conf.d/default.conf
             COPY build/ /usr/share/nginx/html
             EXPOSE 80
             CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
             
-            # 5. Build the image (Fast because the heavy work is done)
+            # 5. Build the image
             docker build -t shoft-africa-apps-catalogue -f Dockerfile.simple .
             
-            # 6. Remove old container if it exists
+            # 6. Remove the existing container (The '|| true' prevents errors if it's missing)
             docker rm -f shoft-africa-apps-catalogue-container || true
             
-            # 7. Start the new container on port 3000
+            # 7. Run the new container on a straight line
             docker run -d --name shoft-africa-apps-catalogue-container --restart always -p 3000:80 shoft-africa-apps-catalogue
