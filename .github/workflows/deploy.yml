@@ -18,18 +18,30 @@ jobs:
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
           script: |
-            # 1. Navigate to the app directory
+            # 1. Enter the project folder
             cd /var/www/ShoftAfricaAppsCatalogue || exit
-            
-            # 2. Pull latest changes from GitHub
             git pull origin main
             
-            # 3. Build the Docker image with the new name
-            docker build -t shoft-africa-apps-catalogue -f src/Dockerfile src/
+            # 2. Cleanup old Docker junk to free up RAM/Disk space
+            # This prevents the disk from filling up with failed builds
+            docker system prune -af
             
-            # 4. Remove the old container if it exists
-            # The '|| true' ensures the script keeps going if the container isn't found
+            # 3. Build ON the VPS (Bypasses Docker 254 error)
+            # Uses your 2G swap natively
+            npm install --legacy-peer-deps
+            npm run build
+            
+            # 4. Create a Simple Dockerfile on the fly
+            echo "FROM nginx:stable-alpine
+            COPY build/ /usr/share/nginx/html
+            EXPOSE 80
+            CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
+            
+            # 5. Build the image (Fast because the heavy work is done)
+            docker build -t shoft-africa-apps-catalogue -f Dockerfile.simple .
+            
+            # 6. Remove old container if it exists
             docker rm -f shoft-africa-apps-catalogue-container || true
             
-            # 5. Start the new container on port 3000
+            # 7. Start the new container on port 3000
             docker run -d --name shoft-africa-apps-catalogue-container --restart always -p 3000:80 shoft-africa-apps-catalogue
