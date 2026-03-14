@@ -175,16 +175,16 @@ function Oniduuru() {
               Connecting Africa's finest talents with global opportunities.
             </p>
             <div className="flex space-x-4 text-2xl ml-[100px] md:ml-[60px]">
-              <a href="#" className="hover:text-white transition duration-300">
+              <a className="hover:text-white transition duration-300 cursor-pointer">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a className="hover:text-white transition duration-300 cursor-pointer">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a className="hover:text-white transition duration-300 cursor-pointer">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a className="hover:text-white transition duration-300 cursor-pointer">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
             </div>
@@ -194,11 +194,11 @@ function Oniduuru() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition duration-300">Home</a></li>
-              <li><a href="#marketplace" className="hover:text-white transition duration-300">Marketplace</a></li>
-              <li><a href="#wallet" className="hover:text-white transition duration-300">Wallet</a></li>
-              <li><a href="#about" className="hover:text-white transition duration-300">About Us</a></li>
-              <li><a href="#contact" className="hover:text-white transition duration-300">Contact</a></li>
+              <li><a href="#" className="hover:text-white transition duration-300 cursor-pointer">Home</a></li>
+              <li><a href="#marketplace" className="hover:text-white transition duration-300 cursor-pointer">Marketplace</a></li>
+              <li><a href="#wallet" className="hover:text-white transition duration-300 cursor-pointer">Wallet</a></li>
+              <li><a href="#about" className="hover:text-white transition duration-300 cursor-pointer">About Us</a></li>
+              <li><a href="#contact" className="hover:text-white transition duration-300 cursor-pointer">Contact</a></li>
             </ul>
           </div>
 
@@ -206,11 +206,11 @@ function Oniduuru() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a className="hover:text-white transition duration-300">Blog</a></li>
-              <li><a  className="hover:text-white transition duration-300">FAQ</a></li>
-              <li><a  className="hover:text-white transition duration-300">Support</a></li>
-              <li><a  className="hover:text-white transition duration-300">Privacy Policy</a></li>
-              <li><a onClick={() => navigate("/landing-pages/oniduuru-terms-and-conditions")}  className="hover:text-white transition duration-300">Terms of Service</a></li>
+              <li><a className="hover:text-white transition duration-300 cursor-pointer">Blogs & Journalism</a></li>
+              <li><a  className="hover:text-white transition duration-300 cursor-pointer">FAQ</a></li>
+              <li><a  className="hover:text-white transition duration-300 cursor-pointer">Support</a></li>
+              <li><a  className="hover:text-white transition duration-300 cursor-pointer">Privacy Policy</a></li>
+              <li><a onClick={() => navigate("/landing-pages/oniduuru-terms-and-conditions")}  className="hover:text-white transition duration-300 cursor-pointer">Terms of Service</a></li>
             </ul>
           </div>
 
