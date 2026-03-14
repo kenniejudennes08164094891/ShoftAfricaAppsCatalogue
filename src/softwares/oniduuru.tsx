@@ -214,7 +214,7 @@ function Oniduuru() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info*/}
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
             <p className="text-gray-400 mb-2">
