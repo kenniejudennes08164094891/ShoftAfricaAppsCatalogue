@@ -15,6 +15,7 @@ import {
 import { ImageProps,OniduuruRoutes } from "../utils/models/stores";
 import OniduuruQR from "../components/OniduuruQR";
 import { useNavigate } from "react-router-dom";
+import TechStackSection from "../components/TechStackSection";
 
 
 function Oniduuru() {
@@ -152,6 +153,10 @@ function Oniduuru() {
         </div>
       </section>
 
+      <div>
+        <TechStackSection/>
+      </div>
+
       {/* Call to Action */}
       <section className="px-6 py-16 bg-gray-900 text-white text-center">
         <h2 className="text-4xl font-bold mb-4">Ready to get started?</h2>
@@ -213,13 +218,13 @@ function Oniduuru() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
             <p className="text-gray-400 mb-2">
-              <i className="fas fa-map-marker-alt mr-2"></i> 123 Africa Blvd, Lagos, Nigeria
-            </p>
-            <p className="text-gray-400 mb-2">
               <i className="fas fa-envelope mr-2"></i> info@shoftafrica.com
             </p>
             <p className="text-gray-400 mb-2">
               <i className="fas fa-phone mr-2"></i> +234-903-125-1953
+            </p>
+              <p className="text-gray-400 mb-2">
+              <i className="fas fa-map-marker-alt mr-2"></i> Lagos, Nigeria
             </p>
           </div>
         </div>
