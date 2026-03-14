@@ -18,9 +18,22 @@ jobs:
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
           script: |
-            cd /var/www/ShoftAfricaAppsCatalogue
+            # 1. Navigate to the app directory
+            cd /var/www/ShoftAfricaAppsCatalogue || exit
+            
+            # 2. Pull latest changes from GitHub
             git pull origin main
-            docker build -t shoft-app .
-            docker stop shoft-app-container || true
-            docker rm shoft-app-container || true
-            docker run -d --name shoft-app-container -p 3000:80 shoft-app
+            
+            # 3. Build the Docker image with the new name
+            docker build -t shoft-africa-apps-catalogue -f src/Dockerfile src/
+            
+            # 4. Remove the old container if it exists
+            # The '|| true' ensures the script keeps going if the container isn't found
+            docker rm -f shoft-africa-apps-catalogue-container || true
+            
+            # 5. Start the new container on port 3000
+            docker run -d \
+              --name shoft-africa-apps-catalogue-container \
+              --restart always \
+              -p 3000:80 \
+              shoft-africa-apps-catalogue
