@@ -32,8 +32,4 @@ jobs:
             docker rm -f shoft-africa-apps-catalogue-container || true
             
             # 5. Start the new container on port 3000
-            docker run -d \
-              --name shoft-africa-apps-catalogue-container \
-              --restart always \
-              -p 3000:80 \
-              shoft-africa-apps-catalogue
+            docker run -d --name shoft-africa-apps-catalogue-container --restart always -p 3000:80 shoft-africa-apps-catalogue
