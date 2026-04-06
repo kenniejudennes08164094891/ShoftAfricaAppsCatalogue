@@ -17,7 +17,6 @@ import nestJsLogo from '..//../assets/images/nestjs_logo.png';
 import paystackLogo from '..//../assets/images/paystack_logo.png';
 import reduceImagesLogo from '..//../assets/images/reduceImages_logo.png';
 import tailwindLogo from '..//../assets/images/tailwind_logo.jpg';
-// import OniduuruLogo from '..//../assets/images/oniduuru_standard_logo.png';
 import OniduuruLogo from '..//../assets/images/Oniduuru-QR.png';
 import MoniepointLogo from '..//../assets/images/moniepoint.jpg';
 
