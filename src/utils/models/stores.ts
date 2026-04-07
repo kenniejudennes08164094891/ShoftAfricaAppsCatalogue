@@ -65,8 +65,8 @@ export const catalogItemsArray: CatalogItem[] = [
 ]
 
 export const OniduuruRoutes = {
-  scouterSignUp: 'https://oniduuru-marketplace.vercel.app/scouter/scouter-signup?stage=scouter_onboarding',
-  talentSignUp: 'https://oniduuru-marketplace.vercel.app/talent/talent-signup?stage=talent_onboarding',
-  loginSignIn: 'https://oniduuru-marketplace.vercel.app/auth/login',
-  appUrl: 'https://oniduuru-marketplace.vercel.app/auth/welcome-page'
+  scouterSignUp: 'https://oniduuru.marketplace.shoftafrica.com/scouter/scouter-signup?stage=scouter_onboarding',
+  talentSignUp: 'https://oniduuru.marketplace.shoftafrica.com/talent/talent-signup?stage=talent_onboarding',
+  loginSignIn: 'https://oniduuru.marketplace.shoftafrica.com/auth/login',
+  appUrl: 'https://oniduuru.marketplace.shoftafrica.com/auth/welcome-page'
 }
