@@ -24,7 +24,7 @@ const OniduuruQR = ({ isOpen, onClose }:any) => {
           
           <div className="bg-gray-100 p-4 rounded-xl shadow-inner">
             <img
-              src={ImageProps.OniduuruQR}
+              src={ImageProps.OniduuruLogo}
               alt="Oniduuru QR Code"
               className="w-48 h-48 object-contain rounded-md"
             />
