@@ -5,15 +5,22 @@ import Oniduuru from './softwares/oniduuru';
 import { Route, Routes } from 'react-router-dom';
 import Index from './catalogue-grid';
 import OniduuruTermsPage from './pages/OniduuruTermsPage';
+import InvestigativeJournalism from './pages/InvestigativeJournalism';
+import Blog1 from './components/InvestigativeBlogs/blog1';
 
 function App() {
   return (
     <div className="App">
-         <Routes>
+      <Routes>
         <Route path="/" element={<Index />} />
-          <Route path="/landing-pages/oniduuru-marketplace" element={<Oniduuru />} />
-           <Route path="/landing-pages/oniduuru-terms-and-conditions" element={<OniduuruTermsPage />} />
-        </Routes>
+        <Route path="/landing-pages/oniduuru-marketplace" element={<Oniduuru />} />
+        <Route path="/landing-pages/oniduuru-terms-and-conditions" element={<OniduuruTermsPage />} />
+        <Route path="/investigative-journalism/creative-blog" element={<InvestigativeJournalism />} />
+        {/* Blogs Below Here*/}
+        <Route path="/investigative-journalism/creative-blog/:topic" element={<Blog1 />} />
+
+         {/* Blogs Above Here*/}
+      </Routes>
     </div>
   );
 }
