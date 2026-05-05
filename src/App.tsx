@@ -7,6 +7,8 @@ import Index from './catalogue-grid';
 import OniduuruTermsPage from './pages/OniduuruTermsPage';
 import InvestigativeJournalism from './pages/InvestigativeJournalism';
 import Blog1 from './components/InvestigativeBlogs/blog1';
+import Blog2 from './components/InvestigativeBlogs/blog2';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/investigative-journalism/creative-blog" element={<InvestigativeJournalism />} />
         {/* Blogs Below Here*/}
         <Route path="/investigative-journalism/creative-blog/:topic" element={<Blog1 />} />
+        <Route path="/investigative-journalism/creative-blog/fuel/:topic" element={<Blog2 />} />
 
          {/* Blogs Above Here*/}
       </Routes>

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { BlogImages } from "../../utils/models/blogStores";
 import SupportOurWork from "../SupportOurWork";
+import { useLocation } from "react-router-dom";
 
 const Blog1 = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
      const [isModalOpen, setIsModalOpen] = useState(false);
+      const location = useLocation();
+    const { title, subTitle, date, image } = location.state || {};
 
     return (
         <>
@@ -55,7 +58,7 @@ const Blog1 = () => {
                     <div className="md:hidden mt-4 pb-4 flex flex-col gap-2 animate-in slide-in-from-top duration-300">
                         <button className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">Latest Reports</button>
                         <button className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">Archive</button>
-                        <button className="bg-[#1E429F] text-white px-4 py-3 rounded-xl font-bold">Support Our Work</button>
+                        <button  onClick={() =>setIsModalOpen(true)} className="bg-[#1E429F] text-white px-4 py-3 rounded-xl font-bold">Support Our Work</button>
                     </div>
                 )}
             </nav>
@@ -64,20 +67,20 @@ const Blog1 = () => {
                     {/* Header Section */}
                     <header className="bg-[#1E429F] p-8 md:p-12 text-center">
                         <div className="inline-block px-4 py-1 bg-yellow-400 text-blue-900 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                            May 4, 2026
+                            {date}
                         </div>
                         <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-                            What can Nigerians do to heal in Tinubu's second term
+                            {title}
                         </h1>
                         <p className="text-blue-100 text-lg md:text-xl font-medium max-w-2xl mx-auto italic">
-                            Beyond the Ballot: Healing Nigeria in a second term will depend less on promises and more on accountability, unity, and real economic relief for everyday citizens.
+                          {subTitle}
                         </p>
                     </header>
 
                     {/* Image Placeholder Implementation */}
                     <div className="w-full h-64 md:h-96 overflow-hidden">
                         <img 
-                            src={BlogImages.Tinubu} 
+                            src={image} 
                             alt="National Leadership and Unity" 
                             className="w-full h-full object-cover"
                         />
@@ -139,7 +142,7 @@ const Blog1 = () => {
                                 <p className="text-xs text-gray-500">Truth. Justice. Progress.</p>
                             </div>
                         </div>
-                        <button className="text-[#1E429F] font-bold hover:underline">Share this Report</button>
+                         <button className="text-[#1E429F] font-bold hover:underline">Shoft-Africa to the World 🌍</button>
                     </footer>
                 </article>
              </main>

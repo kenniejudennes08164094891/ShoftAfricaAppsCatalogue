@@ -67,7 +67,16 @@ const InvestigativeJournalism = () => {
                         <article
                             key={post.id}
                             onClick={() => navigate(
-                                `/${post.id}/creative-blog/${slugify(post.title)}}`
+                                `/${post.id}/creative-blog/${post.routePath}${slugify(post.title)
+                                }}`,
+                                {
+                                    state: {
+                                        title: post.title,
+                                        subTitle: post.subTitle,
+                                        date: post.date,
+                                        image: post.image,
+                                    }
+                                }
                             )}
                             className="group cursor-pointer bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col transform md:hover:scale-105 active:scale-95"
                         >
