@@ -67,20 +67,20 @@ const Blog1 = () => {
                     {/* Header Section */}
                     <header className="bg-[#1E429F] p-8 md:p-12 text-center">
                         <div className="inline-block px-4 py-1 bg-yellow-400 text-blue-900 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                            {date}
+                            {date || "May 4, 2026"}
                         </div>
                         <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-                            {title}
+                            {title || "What can Nigerians do to heal in Tinubu's second term"}
                         </h1>
                         <p className="text-blue-100 text-lg md:text-xl font-medium max-w-2xl mx-auto italic">
-                          {subTitle}
+                          {subTitle || "Beyond the Ballot: Healing Nigeria in a second term will depend less on promises and more on accountability, unity, and real economic relief for everyday citizens."}
                         </p>
                     </header>
 
                     {/* Image Placeholder Implementation */}
                     <div className="w-full h-64 md:h-96 overflow-hidden">
                         <img 
-                            src={image} 
+                            src={image || BlogImages.Tinubu} 
                             alt="National Leadership and Unity" 
                             className="w-full h-full object-cover"
                         />

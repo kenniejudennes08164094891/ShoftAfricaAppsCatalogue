@@ -68,20 +68,20 @@ const Blog2 = () => {
                         {/* Header Section */}
                         <header className="bg-[#1E429F] p-8 md:p-12 text-center">
                             <div className="inline-block px-4 py-1 bg-yellow-400 text-blue-900 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                                {date}
+                                {date || "May 5, 2026"}
                             </div>
                             <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-                                {title}
+                                {title || "Reasons why a litre of fuel might be ₦5,000 in the next 2yrs"}
                             </h1>
                             <p className="text-blue-100 text-lg md:text-xl font-medium max-w-2xl mx-auto italic">
-                                {subTitle}
+                                {subTitle || "Global Drama, Local Pain: How wahala in the Middle East ends up at your local filling station."}
                             </p>
                         </header>
 
                         {/* Image Placeholder Implementation */}
                         <div className="w-full h-64 md:h-96 overflow-hidden">
                             <img
-                                src={image}
+                                src={image || BlogImages.Fuel}
                                 alt="Fuel Price and Middle East Wahala"
                                 className="w-full h-full object-cover"
                             />
