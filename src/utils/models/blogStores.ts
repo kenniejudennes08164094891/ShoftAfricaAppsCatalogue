@@ -3,10 +3,14 @@ import Blog1 from "../../components/InvestigativeBlogs/blog1";
 import Tinubu from '..//../assets/images/tinubu.jpg';
 import Blog2 from "../../components/InvestigativeBlogs/blog2";
 import Fuel from '..//../assets/images/Fuel.jpg';
+import Blog3 from "../../components/InvestigativeBlogs/blog3";
+import Africa from '..//../assets/images/africa4.png';
 
 export const BlogImages = {
-Tinubu,Fuel
+  Tinubu, Fuel,Africa
 }
+
+export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
 
 export const slugify = (text: string) =>
   text
@@ -44,5 +48,14 @@ export const blogPosts: BlogPost[] = [
     routePath: "fuel/",
     image: BlogImages.Fuel,
     content: Blog2
+  },
+  {
+    id: "investigative-journalism",
+    title: "When Africa rises, the world feels it. But when Africa falls, the world profits from it.",
+    subTitle: "A win accross Africa is a loss to the rest of the world...and a loss accross africa is a win to the rest of the world",
+    date: "May 7, 2026",
+    routePath: "africa/",
+    image: BlogImages.Africa,
+    content: Blog3
   },
 ];

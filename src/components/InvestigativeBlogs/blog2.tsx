@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BlogImages } from "../../utils/models/blogStores";
+import { BlogImages, shoftAfricaWebsite } from "../../utils/models/blogStores";
 import SupportOurWork from "../SupportOurWork";
 import { useLocation } from "react-router-dom";
 import CommentSection from "../CommentSection";
@@ -142,7 +142,7 @@ const Blog2 = () => {
                                     <p className="text-xs text-gray-500">Truth. Justice. Progress.</p>
                                 </div>
                             </div>
-                            <button className="text-[#1E429F] font-bold hover:underline">Shoft-Africa to the World 🌍</button>
+                            <button onClick={() => window.open(shoftAfricaWebsite, "_blank")} className="text-[#1E429F] font-bold hover:underline">Shoft-Africa to the World 🌍</button>
                         </footer>
                     </article>
                     <CommentSection />
