@@ -5,9 +5,11 @@ import Blog2 from "../../components/InvestigativeBlogs/blog2";
 import Fuel from '..//../assets/images/Fuel.jpg';
 import Blog3 from "../../components/InvestigativeBlogs/blog3";
 import Africa from '..//../assets/images/africa4.png';
+import Blog4 from "../../components/InvestigativeBlogs/blog4";
+import Humanoids from '..//../assets/images/humanoids.jpg';
 
 export const BlogImages = {
-  Tinubu, Fuel,Africa
+  Tinubu, Fuel,Africa,Humanoids
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -57,5 +59,14 @@ export const blogPosts: BlogPost[] = [
     routePath: "africa/",
     image: BlogImages.Africa,
     content: Blog3
+  },
+    {
+    id: "investigative-journalism",
+    title: "Reasons why Humanoids may replace Humans in the next few decades.",
+    subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
+    date: "May 9, 2026",
+    routePath: "humanoids/",
+    image: BlogImages.Humanoids,
+    content: Blog4
   },
 ];

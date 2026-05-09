@@ -9,6 +9,7 @@ import InvestigativeJournalism from './pages/InvestigativeJournalism';
 import Blog1 from './components/InvestigativeBlogs/blog1';
 import Blog2 from './components/InvestigativeBlogs/blog2';
 import Blog3 from './components/InvestigativeBlogs/blog3';
+import Blog4 from './components/InvestigativeBlogs/blog4';
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
         <Route path="/investigative-journalism/creative-blog/:topic" element={<Blog1 />} />
         <Route path="/investigative-journalism/creative-blog/fuel/:topic" element={<Blog2 />} />
          <Route path="/investigative-journalism/creative-blog/africa/:topic" element={<Blog3 />} />
+          <Route path="/investigative-journalism/creative-blog/humanoids/:topic" element={<Blog4 />} />
 
-         {/* Blogs Above Here*/}
+         {/* Blogs Above Here */}
       </Routes>
     </div>
   );
