@@ -7,9 +7,11 @@ import Blog3 from "../../components/InvestigativeBlogs/blog3";
 import Africa from '..//../assets/images/africa4.png';
 import Blog4 from "../../components/InvestigativeBlogs/blog4";
 import Humanoids from '..//../assets/images/humanoids.jpg';
+import Blog5 from "../../components/InvestigativeBlogs/blog5";
+import fake from '..//../assets/images/fake.jpg';
 
 export const BlogImages = {
-  Tinubu, Fuel,Africa,Humanoids
+  Tinubu, Fuel,Africa,Humanoids,fake
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -68,5 +70,15 @@ export const blogPosts: BlogPost[] = [
     routePath: "humanoids/",
     image: BlogImages.Humanoids,
     content: Blog4
+  },
+
+  {
+    id: "investigative-journalism",
+    title: "The Dark Business of Fake Universities and Certificate Fraud.",
+    subTitle: "How thousands of fake degrees circulate across Africa, affecting healthcare, engineering, politics, and national security.",
+    date: "May 10, 2026",
+    routePath: "fraud/",
+    image: BlogImages.fake,
+    content: Blog5
   },
 ];
