@@ -1,4 +1,4 @@
-name: Deploy ShoftAfrica App
+name: Deploy ShoftAfrica App to AWS
 
 on:
   push:
@@ -9,29 +9,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy to VPS via SSH
+      - name: Deploy to AWS Lightsail via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_IP }}
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
+          # Increased timeout because building React on small RAM is slow
+          command_timeout: 20m
           script: |
-            # 1. Enter the project folder
+            # 1. Enter the folder
             cd /var/www/ShoftAfricaAppsCatalogue || exit
+
+            # 2. Update code
             git pull origin main
+
+            # 3. Safe Cleanup
+            # We don't delete 'build' yet. We only clean docker cache to free RAM.
+            docker system prune -f
             
-            # 2. Deep Clean old files and Docker junk to maximize RAM
-            rm -rf node_modules build
-            docker system prune -af
-            
-            # 3. Install & Build (Native VPS power using your 2G Swap)
+            # 4. Build Process (The "Danger" Zone)
+            # If these fail, the script stops here (due to 'set -e' behavior of ssh-action)
+            # and your old container stays running.
             npm install --legacy-peer-deps
-            npm run build
+            npm run build || { echo 'Build failed! Keeping old version.'; exit 1; }
             
-            # 4. Create the simple Dockerfile with the React Router Fix (prevents 404s)
-            # We write a custom Nginx config that redirects all requests to index.html
+            # 5. Generate Dockerfile
             echo "FROM nginx:stable-alpine
             RUN echo 'server { \
                 listen 80; \
@@ -45,11 +50,16 @@ jobs:
             EXPOSE 80
             CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
             
-            # 5. Build the image
-            docker build -t shoft-africa-apps-catalogue -f Dockerfile.simple .
+            # 6. Build the NEW image with a temporary tag
+            docker build -t shoft-africa-apps-catalogue:latest -f Dockerfile.simple . || { echo 'Docker build failed!'; exit 1; }
             
-            # 6. Remove the existing container (The '|| true' prevents errors if it's missing)
-            docker rm -f shoft-africa-apps-catalogue-container || true
+            # 7. THE SWAP (Only happens if all above succeeded)
+            echo "Deployment successful. Swapping containers now..."
+            docker stop shoft-africa-apps-catalogue-container || true
+            docker rm shoft-africa-apps-catalogue-container || true
             
-            # 7. Run the new container on a straight line
-            docker run -d --name shoft-africa-apps-catalogue-container --restart always -p 3000:80 shoft-africa-apps-catalogue
+            docker run -d \
+              --name shoft-africa-apps-catalogue-container \
+              --restart always \
+              -p 127.0.0.1:3000:80 \
+              shoft-africa-apps-catalogue:latest

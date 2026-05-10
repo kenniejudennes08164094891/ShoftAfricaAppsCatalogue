@@ -33,7 +33,7 @@ export interface BlogPost {
   content: () => JSX.Element;
 }
 
-// Reasons why a litre of fuel might be N5000 in the next 2yrs
+// Reasons why a litre of fuel might be N5000 in the next 2yrs.
 export const blogPosts: BlogPost[] = [
   {
     id: "investigative-journalism",
