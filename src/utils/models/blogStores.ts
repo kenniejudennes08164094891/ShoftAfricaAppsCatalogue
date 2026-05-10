@@ -11,7 +11,7 @@ import Blog5 from "../../components/InvestigativeBlogs/blog5";
 import fake from '..//../assets/images/fake.jpg';
 
 export const BlogImages = {
-  Tinubu, Fuel,Africa,Humanoids,fake
+  Tinubu, Fuel, Africa, Humanoids, fake
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -62,23 +62,22 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.Africa,
     content: Blog3
   },
-    {
-    id: "investigative-journalism",
-    title: "Reasons why Humanoids may replace Humans in the next few decades.",
-    subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
-    date: "May 9, 2026",
-    routePath: "humanoids/",
-    image: BlogImages.Humanoids,
-    content: Blog4
-  },
-
   {
     id: "investigative-journalism",
     title: "The Dark Business of Fake Universities and Certificate Fraud.",
     subTitle: "How thousands of fake degrees circulate across Africa, affecting healthcare, engineering, politics, and national security.",
-    date: "May 10, 2026",
+    date: "May 11, 2026",
     routePath: "fraud/",
     image: BlogImages.fake,
     content: Blog5
+  },
+  {
+    id: "investigative-journalism",
+    title: "Reasons why Humanoids may replace Humans in the next few decades.",
+    subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
+    date: "May 12, 2026",
+    routePath: "humanoids/",
+    image: BlogImages.Humanoids,
+    content: Blog4
   },
 ];
