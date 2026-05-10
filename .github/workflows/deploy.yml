@@ -61,5 +61,5 @@ jobs:
             docker run -d \
               --name shoft-africa-apps-catalogue-container \
               --restart always \
-              -p 3000:80 \
+              -p 127.0.0.1:3000:80 \
               shoft-africa-apps-catalogue:latest
