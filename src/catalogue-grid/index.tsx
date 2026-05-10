@@ -13,7 +13,7 @@ const Index = () => {
 >
     {/* style={{ backgroundImage: `url(${ImageProps.shoftAfrica})`, backgroundSize: 'cover', backgroundPosition: 'center' }} */}
       <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
-       Welcome to Shoft Africa's Software Catalogue
+       Welcome to Shoft Africa's Software Catalogue.
       </h1>
 
       <div className="w-full max-w-4xl">

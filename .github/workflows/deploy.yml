@@ -1,4 +1,4 @@
-name: Deploy ShoftAfrica App
+name: Deploy ShoftAfrica App to AWS
 
 on:
   push:
@@ -9,29 +9,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy to VPS via SSH
+      - name: Deploy to AWS Lightsail via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_IP }}
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
           script: |
-            # 1. Enter the project folder
+            # 1. Enter the folder
             cd /var/www/ShoftAfricaAppsCatalogue || exit
-            git pull origin main
+
+            # 2. Check if it's a git repo, if not, clone it
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/kenniejudennes08164094891/ShoftAfricaAppsCatalogue.git .
+            else
+              git pull origin main
+            fi
             
-            # 2. Deep Clean old files and Docker junk to maximize RAM
+            # 3. Cleanup to save 2GB RAM
             rm -rf node_modules build
-            docker system prune -af
+            docker system prune -f
             
-            # 3. Install & Build (Native VPS power using your 2G Swap)
+            # 4. Build Process
             npm install --legacy-peer-deps
             npm run build
             
-            # 4. Create the simple Dockerfile with the React Router Fix (prevents 404s)
-            # We write a custom Nginx config that redirects all requests to index.html
+            # 5. Generate Dockerfile (The React Router 404 Fix)
             echo "FROM nginx:stable-alpine
             RUN echo 'server { \
                 listen 80; \
@@ -45,11 +50,7 @@ jobs:
             EXPOSE 80
             CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
             
-            # 5. Build the image
+            # 6. Build and Deploy Container
             docker build -t shoft-africa-apps-catalogue -f Dockerfile.simple .
-            
-            # 6. Remove the existing container (The '|| true' prevents errors if it's missing)
             docker rm -f shoft-africa-apps-catalogue-container || true
-            
-            # 7. Run the new container on a straight line
             docker run -d --name shoft-africa-apps-catalogue-container --restart always -p 3000:80 shoft-africa-apps-catalogue
