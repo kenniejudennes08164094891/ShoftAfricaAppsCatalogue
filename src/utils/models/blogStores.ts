@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "investigative-journalism",
     title: "The Dark Business of Fake Universities and Certificate Fraud.",
-    subTitle: "How thousands of fake degrees circulate across Africa, affecting healthcare, engineering, politics, and national security.",
+    subTitle: "How thousands of fake degrees may circulate across Africa in next few years, affecting healthcare, engineering, politics, and national security.",
     date: "May 11, 2026",
     routePath: "fraud/",
     image: BlogImages.fake,
