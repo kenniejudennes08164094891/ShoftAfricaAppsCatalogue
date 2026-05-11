@@ -9,9 +9,12 @@ import Blog4 from "../../components/InvestigativeBlogs/blog4";
 import Humanoids from '..//../assets/images/humanoids.jpg';
 import Blog5 from "../../components/InvestigativeBlogs/blog5";
 import fake from '..//../assets/images/fake.jpg';
+import Blog6 from "../../components/InvestigativeBlogs/blog6";
+import Mine2 from '..//../assets/images/Mine2.jpeg'
+
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -62,6 +65,15 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.Africa,
     content: Blog3
   },
+   {
+    id: "investigative-journalism",
+    title: "Reasons why Humanoids may replace Humans in the next few decades.",
+    subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
+    date: "May 12, 2026",
+    routePath: "humanoids/",
+    image: BlogImages.Humanoids,
+    content: Blog4
+  },
   {
     id: "investigative-journalism",
     title: "The Dark Business of Fake Universities and Certificate Fraud.",
@@ -71,13 +83,14 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.fake,
     content: Blog5
   },
-  {
+ 
+ {
     id: "investigative-journalism",
-    title: "Reasons why Humanoids may replace Humans in the next few decades.",
-    subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
-    date: "May 12, 2026",
-    routePath: "humanoids/",
-    image: BlogImages.Humanoids,
-    content: Blog4
+    title: "Are Foreign Mining Companies Exploiting Africa’s Rare Minerals?",
+    subTitle:"A deep look into lithium, cobalt, and gold mining operations linked to environmental destruction, child labor, and secret export deals.",
+    date: "May 13, 2026",
+    routePath: "mining/",
+    image:BlogImages.Mine2,
+    content: Blog6
   },
 ];

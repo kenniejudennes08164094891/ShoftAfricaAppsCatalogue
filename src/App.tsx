@@ -11,7 +11,7 @@ import Blog2 from './components/InvestigativeBlogs/blog2';
 import Blog3 from './components/InvestigativeBlogs/blog3';
 import Blog4 from './components/InvestigativeBlogs/blog4';
 import Blog5 from './components/InvestigativeBlogs/blog5';
-
+import Blog6 from './components/InvestigativeBlogs/blog6';
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
          <Route path="/investigative-journalism/creative-blog/africa/:topic" element={<Blog3 />} />
           <Route path="/investigative-journalism/creative-blog/humanoids/:topic" element={<Blog4 />} />
           <Route path="/investigative-journalism/creative-blog/fraud/:topic" element={<Blog5 />} />
+          <Route path="/investigative-journalism/creative-blog/mining/:topic" element={<Blog6 />} />
          {/* Blogs Above Here */}
       </Routes>
     </div>
