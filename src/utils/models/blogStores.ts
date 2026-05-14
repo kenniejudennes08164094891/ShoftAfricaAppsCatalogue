@@ -11,10 +11,12 @@ import Blog5 from "../../components/InvestigativeBlogs/blog5";
 import fake from '..//../assets/images/fake.jpg';
 import Blog6 from "../../components/InvestigativeBlogs/blog6";
 import Mine2 from '..//../assets/images/Mine2.jpeg'
+import Blog7 from "../../components/InvestigativeBlogs/blog7";
+import Africanwoman  from '..//../assets/images/Africanwoman.webp'
 
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake, Mine2
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -92,5 +94,14 @@ export const blogPosts: BlogPost[] = [
     routePath: "mining/",
     image:BlogImages.Mine2,
     content: Blog6
+  },
+  {
+    id: "investigative-journalism",
+    title: "The Silent Struggle of African Women",
+    subTitle: "Millions suffer every month while their pain is dismissed as normal",
+    date: "May 14, 2026",
+    routePath: "african-women/",
+    image: BlogImages.Africanwoman,
+    content: Blog7
   },
 ];
