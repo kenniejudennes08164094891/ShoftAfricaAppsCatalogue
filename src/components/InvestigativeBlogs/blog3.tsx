@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BlogImages, shoftAfricaWebsite } from "../../utils/models/blogStores";
 import SupportOurWork from "../SupportOurWork";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import CommentSection from "../CommentSection";
 
 const Blog3 = () => {
@@ -9,6 +9,7 @@ const Blog3 = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const location = useLocation();
     const { title, subTitle, date, image } = location.state || {};
+     const navigate = useNavigate();
 
     return (
         <>
@@ -33,7 +34,7 @@ const Blog3 = () => {
                                 Latest Reports
                             </button>
 
-                            <button className="text-gray-600 px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1E429F] hover:text-white hover:shadow-md active:scale-95">
+                            <button  onClick={() => navigate("/investigative-journalism/creative-blog")} className="text-gray-600 px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1E429F] hover:text-white hover:shadow-md active:scale-95">
                                 Archive
                             </button>
 
@@ -65,7 +66,7 @@ const Blog3 = () => {
                                 Latest Reports
                             </button>
 
-                            <button className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">
+                            <button  onClick={() => navigate("/investigative-journalism/creative-blog")} className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">
                                 Archive
                             </button>
 

@@ -13,6 +13,7 @@ import Blog4 from './components/InvestigativeBlogs/blog4';
 import Blog5 from './components/InvestigativeBlogs/blog5';
 import Blog6 from './components/InvestigativeBlogs/blog6';
 import Blog7 from './components/InvestigativeBlogs/blog7';
+import Blog8 from './components/InvestigativeBlogs/blog8';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/investigative-journalism/creative-blog/fraud/:topic" element={<Blog5 />} />
           <Route path="/investigative-journalism/creative-blog/mining/:topic" element={<Blog6 />} />
            <Route path="/investigative-journalism/creative-blog/african-women/:topic" element={<Blog7 />} />
+             <Route path="/investigative-journalism/creative-blog/education/:topic" element={<Blog8 />} />
          {/* Blogs Above Here */}
       </Routes>
     </div>

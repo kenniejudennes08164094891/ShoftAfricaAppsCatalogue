@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BlogImages, shoftAfricaWebsite } from "../../utils/models/blogStores";
 import SupportOurWork from "../SupportOurWork";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import CommentSection from "../CommentSection";
 
 const Blog2 = () => {
@@ -9,6 +9,7 @@ const Blog2 = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const location = useLocation();
     const { title, subTitle, date, image } = location.state || {};
+     const navigate = useNavigate();
 
     return (
         <>
@@ -31,7 +32,7 @@ const Blog2 = () => {
                             <button className="text-gray-600 px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1E429F] hover:text-white hover:shadow-md active:scale-95">
                                 Latest Reports
                             </button>
-                            <button className="text-gray-600 px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1E429F] hover:text-white hover:shadow-md active:scale-95">
+                            <button  onClick={() => navigate("/investigative-journalism/creative-blog")} className="text-gray-600 px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1E429F] hover:text-white hover:shadow-md active:scale-95">
                                 Archive
                             </button>
                             <button onClick={() => setIsModalOpen(true)} className="bg-[#1E429F] text-white px-5 py-2 rounded-full hover:bg-blue-800 transition-all shadow-md active:scale-95">
@@ -58,7 +59,7 @@ const Blog2 = () => {
                     {isMenuOpen && (
                         <div className="md:hidden mt-4 pb-4 flex flex-col gap-2 animate-in slide-in-from-top duration-300">
                             <button className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">Latest Reports</button>
-                            <button className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">Archive</button>
+                            <button  onClick={() => navigate("/investigative-journalism/creative-blog")} className="text-left text-gray-600 px-4 py-3 rounded-xl hover:bg-[#1E429F] hover:text-white">Archive</button>
                             <button onClick={() => setIsModalOpen(true)} className="bg-[#1E429F] text-white px-4 py-3 rounded-xl font-bold">Support Our Work</button>
                         </div>
                     )}

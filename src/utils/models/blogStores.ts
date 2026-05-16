@@ -13,10 +13,13 @@ import Blog6 from "../../components/InvestigativeBlogs/blog6";
 import Mine2 from '..//../assets/images/Mine2.jpeg'
 import Blog7 from "../../components/InvestigativeBlogs/blog7";
 import Africanwoman  from '..//../assets/images/Africanwoman.png'
+import Eductation  from '..//../assets/images/education.jpg'
+import Blog8 from "../../components/InvestigativeBlogs/blog8";
+
 
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman,Eductation
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -99,9 +102,18 @@ export const blogPosts: BlogPost[] = [
     id: "investigative-journalism",
     title: "The Silent Struggle of African Women: The Untold Reality of Menstrual Pain Across the Continent",
     subTitle: "Millions suffer every month while their pain is dismissed as normal",
-    date: "May 14, 2026",
+    date: "May 16, 2026",
     routePath: "african-women/",
     image: BlogImages.Africanwoman,
     content: Blog7
+  },
+     {
+    id: "investigative-journalism",
+    title: "True Education knows no four walls",
+    subTitle: "It is built from the conciousness within, and the knowledge without.",
+    date: "May 17, 2026",
+    routePath: "education/",
+    image: BlogImages.Eductation,
+    content: Blog8
   },
 ];
