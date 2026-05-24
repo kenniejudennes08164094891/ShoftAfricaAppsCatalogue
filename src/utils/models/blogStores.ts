@@ -17,11 +17,14 @@ import Eductation from '..//../assets/images/education.jpg'
 import Blog8 from "../../components/InvestigativeBlogs/blog8";
 import Humans from "../../assets/images/baby.jpg";
 import Blog9 from "../../components/InvestigativeBlogs/blog9";
+import Arsenal from "../../assets/images/Arsenal.png"
+import Blog10 from "../../components/InvestigativeBlogs/blog10";
+
 
 
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman, Eductation, Humans
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman, Eductation, Humans, Arsenal
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -126,5 +129,14 @@ export const blogPosts: BlogPost[] = [
     routePath: "humans/",
     image: BlogImages.Humans,
     content: Blog9
+  },
+    {
+    id: "investigative-journalism",
+    title: "The resilience of Arsenal FC... A story to learn from",
+    subTitle: "How Persistence, Strategic Rebuilding, and Long Term Vision Can Inspire Africa’s Growth and Development.",
+    date: "May 25, 2026",
+    routePath: "arsenal/",
+    image: BlogImages.Arsenal,
+    content: Blog10
   },
 ];
