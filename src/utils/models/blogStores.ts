@@ -12,14 +12,16 @@ import fake from '..//../assets/images/fake.jpg';
 import Blog6 from "../../components/InvestigativeBlogs/blog6";
 import Mine2 from '..//../assets/images/Mine2.jpeg'
 import Blog7 from "../../components/InvestigativeBlogs/blog7";
-import Africanwoman  from '..//../assets/images/Africanwoman.png'
-import Eductation  from '..//../assets/images/education.jpg'
+import Africanwoman from '..//../assets/images/Africanwoman.png'
+import Eductation from '..//../assets/images/education.jpg'
 import Blog8 from "../../components/InvestigativeBlogs/blog8";
+import Humans from "../../assets/images/baby.jpg";
+import Blog9 from "../../components/InvestigativeBlogs/blog9";
 
 
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman,Eductation
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman, Eductation, Humans
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -70,7 +72,7 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.Africa,
     content: Blog3
   },
-   {
+  {
     id: "investigative-journalism",
     title: "Reasons why Humanoids may replace Humans in the next few decades.",
     subTitle: "Hey!..Leave him alone...That's not Tunde. That's Tunde's clone!",
@@ -88,14 +90,14 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.fake,
     content: Blog5
   },
- 
- {
+
+  {
     id: "investigative-journalism",
     title: "Are Foreign Mining Companies Exploiting Africa’s Rare Minerals?",
-    subTitle:"A deep look into lithium, cobalt, and gold mining operations linked to environmental destruction, child labor, and secret export deals.",
+    subTitle: "A deep look into lithium, cobalt, and gold mining operations linked to environmental destruction, child labor, and secret export deals.",
     date: "May 13, 2026",
     routePath: "mining/",
-    image:BlogImages.Mine2,
+    image: BlogImages.Mine2,
     content: Blog6
   },
   {
@@ -107,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.Africanwoman,
     content: Blog7
   },
-     {
+  {
     id: "investigative-journalism",
     title: "True Education knows no four walls",
     subTitle: "It is built from the conciousness within, and the knowledge without.",
@@ -115,5 +117,14 @@ export const blogPosts: BlogPost[] = [
     routePath: "education/",
     image: BlogImages.Eductation,
     content: Blog8
+  },
+  {
+    id: "investigative-journalism",
+    title: "Through Mother Nature, We are born anonymous to existence",
+    subTitle: "Names are later given by humans, but nature ultimately identifies us through actions, values, and impact.",
+    date: "May 24, 2026",
+    routePath: "humans/",
+    image: BlogImages.Humans,
+    content: Blog9
   },
 ];
