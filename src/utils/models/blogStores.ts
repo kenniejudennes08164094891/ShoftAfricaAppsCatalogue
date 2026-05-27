@@ -19,12 +19,15 @@ import Humans from "../../assets/images/baby.jpg";
 import Blog9 from "../../components/InvestigativeBlogs/blog9";
 import Arsenal from "../../assets/images/Arsenal.png"
 import Blog10 from "../../components/InvestigativeBlogs/blog10";
+import Blog11 from "../../components/InvestigativeBlogs/blog11";
+import Mind from "../../assets/images/Mind.jpg";
+
 
 
 
 
 export const BlogImages = {
-  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman, Eductation, Humans, Arsenal
+  Tinubu, Fuel, Africa, Humanoids, fake, Mine2, Africanwoman, Eductation, Humans, Arsenal, Mind
 }
 
 export const shoftAfricaWebsite: string = "https://web.shoftafrica.com";
@@ -130,13 +133,23 @@ export const blogPosts: BlogPost[] = [
     image: BlogImages.Humans,
     content: Blog9
   },
+  //   {
+  //   id: "investigative-journalism",
+  //   title: "The resilience of Arsenal FC... A story to learn from",
+  //   subTitle: "How Persistence, Strategic Rebuilding, and Long Term Vision Can Inspire Africa’s Growth and Development.",
+  //   date: "May 25, 2026",
+  //   routePath: "arsenal/",
+  //   image: BlogImages.Arsenal,
+  //   content: Blog10
+  // },
     {
     id: "investigative-journalism",
-    title: "The resilience of Arsenal FC... A story to learn from",
-    subTitle: "How Persistence, Strategic Rebuilding, and Long Term Vision Can Inspire Africa’s Growth and Development.",
-    date: "May 25, 2026",
-    routePath: "arsenal/",
-    image: BlogImages.Arsenal,
-    content: Blog10
+    title: "We don’t own ourselves; our bodies own us.",
+    subTitle: "Living becomes harder when your own body turns against you.",
+    date: "May 28, 2026",
+    routePath: "humans_mind/",
+    image: BlogImages.Mind,
+    content: Blog11
   },
+  
 ];
