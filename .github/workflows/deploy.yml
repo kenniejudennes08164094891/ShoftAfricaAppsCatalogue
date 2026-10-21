@@ -5,34 +5,53 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to AWS Lightsail via SSH
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Application
+        run: npm run build -- --configuration=production
+        env:
+          CI: false
+
+      - name: Deploy Build to Server via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_IP }}
+          username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
+          key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
+          source: "build/*"
+          target: "/home/admin/shoft_catalogue_build"
+          strip_components: 0
+          rm: true
+
+      - name: Update Container on Server via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_IP }}
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
-          command_timeout: 20m
           script: |
-            # 1. Enter the folder
+            # 1. Ensure target directory exists
+            sudo mkdir -p /var/www/ShoftAfricaAppsCatalogue/build
+            
+            # 2. Move the new build files into place
+            sudo rm -rf /var/www/ShoftAfricaAppsCatalogue/build/*
+            sudo cp -r /home/admin/shoft_catalogue_build/* /var/www/ShoftAfricaAppsCatalogue/build/
+            
             cd /var/www/ShoftAfricaAppsCatalogue || exit
 
-            # 2. Update code
-            git pull origin main
-
-            # 3. Safe Cleanup
-            docker system prune -f
-            
-            # 4. Build Process
-            npm install --legacy-peer-deps
-            npm run build || { echo 'Build failed! Keeping old version.'; exit 1; }
-            
-            # 5. Generate Dockerfile
+            # 3. Generate a clean Dockerfile on the fly
             echo "FROM nginx:stable-alpine
             RUN echo 'server { \
                 listen 80; \
@@ -45,12 +64,11 @@ jobs:
             COPY build/ /usr/share/nginx/html
             EXPOSE 80
             CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
-            
-            # 6. Build the NEW image
-            docker build -t shoft-africa-apps-catalogue:latest -f Dockerfile.simple . || { echo 'Docker build failed!'; exit 1; }
-            
-            # 7. THE SWAP
-            echo "Deployment successful. Swapping containers now..."
+
+            # 4. Build the lightweight Docker image instantly using pre-built files
+            docker build -t shoft-africa-apps-catalogue:latest -f Dockerfile.simple .
+
+            # 5. Swap the Docker container cleanly
             docker stop shoft-africa-apps-catalogue-container || true
             docker rm shoft-africa-apps-catalogue-container || true
             
