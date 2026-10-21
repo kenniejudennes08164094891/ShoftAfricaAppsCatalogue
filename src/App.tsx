@@ -39,7 +39,7 @@ function App() {
         <Route path="/investigative-journalism/creative-blog/humans/:topic" element={<Blog9 />} />
         <Route path="/investigative-journalism/creative-blog/arsenal/:topic" element={<Blog10 />} />
         <Route path="/investigative-journalism/creative-blog/humans_mind/:topic" element={<Blog11 />} />
-        {/* Blogs Above Here */}
+        {/* Blogs Above Here*/}
       </Routes>
     </div>
   );

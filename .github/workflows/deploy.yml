@@ -17,7 +17,6 @@ jobs:
           host: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_IP }}
           username: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_USERNAME }}
           key: ${{ secrets.SHOFT_AFRICA_APPS_CATALOGUE_SSH_KEY }}
-          # Increased timeout because building React on small RAM is slow
           command_timeout: 20m
           script: |
             # 1. Enter the folder
@@ -27,12 +26,9 @@ jobs:
             git pull origin main
 
             # 3. Safe Cleanup
-            # We don't delete 'build' yet. We only clean docker cache to free RAM.
             docker system prune -f
             
-            # 4. Build Process (The "Danger" Zone)
-            # If these fail, the script stops here (due to 'set -e' behavior of ssh-action)
-            # and your old container stays running.
+            # 4. Build Process
             npm install --legacy-peer-deps
             npm run build || { echo 'Build failed! Keeping old version.'; exit 1; }
             
@@ -50,10 +46,10 @@ jobs:
             EXPOSE 80
             CMD [\"nginx\", \"-g\", \"daemon off;\"]" > Dockerfile.simple
             
-            # 6. Build the NEW image with a temporary tag
+            # 6. Build the NEW image
             docker build -t shoft-africa-apps-catalogue:latest -f Dockerfile.simple . || { echo 'Docker build failed!'; exit 1; }
             
-            # 7. THE SWAP (Only happens if all above succeeded)
+            # 7. THE SWAP
             echo "Deployment successful. Swapping containers now..."
             docker stop shoft-africa-apps-catalogue-container || true
             docker rm shoft-africa-apps-catalogue-container || true
