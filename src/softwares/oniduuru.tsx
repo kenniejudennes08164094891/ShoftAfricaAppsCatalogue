@@ -95,62 +95,62 @@ function Oniduuru() {
         </div>
       </section>
 
-      {/* Wallet Platform Section */}
+      {/* Wallet Platform Section shall be uncommented after pssb liscence*/}
       <section id="wallet" className="py-16 md:py-24 bg-gray-900 text-white shadow-lg mx-4 md:mx-auto my-8">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Secure & Seamless Wallet
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-12">
-            Manage your funds effortlessly within the Oniduuru ecosystem.
-          </p>
+        {/*<div className="container mx-auto px-4 text-center">*/}
+        {/*  <h2 className="text-3xl md:text-4xl font-bold mb-4">*/}
+        {/*    Secure & Seamless Wallet*/}
+        {/*  </h2>*/}
+        {/*  <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-12">*/}
+        {/*    Manage your funds effortlessly within the Oniduuru ecosystem.*/}
+        {/*  </p>*/}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Transfer */}
-            <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">
-              <div className="text-green-400 text-5xl mb-4">
-                <FontAwesomeIcon icon={faExchangeAlt} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Funds Transfer</h3>
-              <p className="text-gray-400 text-center">
-                Send and receive payments securely and instantly for services rendered or received.
-              </p>
-            </div>
+        {/*  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">*/}
+        {/*    /!* Transfer *!/*/}
+        {/*    <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">*/}
+        {/*      <div className="text-green-400 text-5xl mb-4">*/}
+        {/*        <FontAwesomeIcon icon={faExchangeAlt} />*/}
+        {/*      </div>*/}
+        {/*      <h3 className="text-xl font-semibold mb-2">Funds Transfer</h3>*/}
+        {/*      <p className="text-gray-400 text-center">*/}
+        {/*        Send and receive payments securely and instantly for services rendered or received.*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
 
-            {/* Withdrawal */}
-            <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">
-              <div className="text-yellow-400 text-5xl mb-4">
-                <FontAwesomeIcon icon={faMoneyBillWave} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Easy Withdrawal</h3>
-              <p className="text-gray-400 text-center">
-                Withdraw your earnings directly to your bank account with minimal fees.
-              </p>
-            </div>
+        {/*    /!* Withdrawal *!/*/}
+        {/*    <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">*/}
+        {/*      <div className="text-yellow-400 text-5xl mb-4">*/}
+        {/*        <FontAwesomeIcon icon={faMoneyBillWave} />*/}
+        {/*      </div>*/}
+        {/*      <h3 className="text-xl font-semibold mb-2">Easy Withdrawal</h3>*/}
+        {/*      <p className="text-gray-400 text-center">*/}
+        {/*        Withdraw your earnings directly to your bank account with minimal fees.*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
 
-            {/* Deposits */}
-            <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">
-              <div className="text-blue-400 text-5xl mb-4">
-                <FontAwesomeIcon icon={faWallet} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Quick Deposits</h3>
-              <p className="text-gray-400 text-center">
-                Fund your wallet easily to pay for services or save for future projects.
-              </p>
-            </div>
+        {/*    /!* Deposits *!/*/}
+        {/*    <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">*/}
+        {/*      <div className="text-blue-400 text-5xl mb-4">*/}
+        {/*        <FontAwesomeIcon icon={faWallet} />*/}
+        {/*      </div>*/}
+        {/*      <h3 className="text-xl font-semibold mb-2">Quick Deposits</h3>*/}
+        {/*      <p className="text-gray-400 text-center">*/}
+        {/*        Fund your wallet easily to pay for services or save for future projects.*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
 
-            {/* Savings */}
-            <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">
-              <div className="text-red-400 text-5xl mb-4">
-                <FontAwesomeIcon icon={faPiggyBank} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Smart Savings</h3>
-              <p className="text-gray-400 text-center">
-                Utilize our integrated savings feature to grow your funds securely.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/*    /!* Savings *!/*/}
+        {/*    <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300">*/}
+        {/*      <div className="text-red-400 text-5xl mb-4">*/}
+        {/*        <FontAwesomeIcon icon={faPiggyBank} />*/}
+        {/*      </div>*/}
+        {/*      <h3 className="text-xl font-semibold mb-2">Smart Savings</h3>*/}
+        {/*      <p className="text-gray-400 text-center">*/}
+        {/*        Utilize our integrated savings feature to grow your funds securely.*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </section>
 
       <div>

@@ -116,15 +116,15 @@ const OniduuruTermsPage = () => {
 
             <div>
               <h3 className="font-semibold text-lg mb-2">
-                Wallet Profile Requirement
+                Wallet Profile Requirement (Optional)
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
                 To participate on the Oniduuru Marketplace platform,
-                all users must create a wallet profile.
+                all users may create a wallet profile (Currently unavailable at the moment).
                 Visibility as a talent available for hire or as
-                a scouter seeking to hire is strictly conditional
-                upon successful creation and approval of this wallet profile.
+                a scouter seeking to hire is strictly optional, and does not depend
+                upon successful creation and approval of their wallet profile.
               </p>
 
               <p className="text-gray-600 mt-3">
@@ -178,46 +178,46 @@ const OniduuruTermsPage = () => {
           {/* Wallet */}
           <section id="wallet" className="space-y-6">
             <h2 className="text-2xl font-bold">
-              ii) Wallets & Transactions
+              ii) Payments & Transactions
             </h2>
 
             <div>
               <h3 className="font-semibold text-lg mb-2">
-                Funds Deposit
+                Market Payment
               </h3>
 
               <p className="text-gray-600">
-                Deposits are processed exclusively via Paystack-Titan Checkout.
-                Virtual accounts may be assigned for frequent users.
+               Scouter's annual account activation/Payments can be processed via Paystack-Titan Checkout.
+                Virtual accounts may be assigned for frequent users, for payment of market goods/services
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-2">
-                Wallet-to-Wallet Transfers
+                Payment for Market Services
               </h3>
 
               <ul className="list-disc ml-6 text-gray-600 space-y-2">
-                <li>An engagement must exist.</li>
+                <li>A market engagement must exist.</li>
                 <li>The talent must confirm work completion.</li>
                 <li>The Market Hire ID validates the payment.</li>
               </ul>
 
               <p className="text-gray-600 mt-2">
-                These transfers are free of charge.
+               Individual's Bank-to-Bank transfers are necessary for market payments outside Oniduuru app
               </p>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-lg mb-2">
-                Wallet-Bank Withdrawals
-              </h3>
+            {/*<div>*/}
+            {/*  <h3 className="font-semibold text-lg mb-2">*/}
+            {/*    Wallet-Bank Withdrawals*/}
+            {/*  </h3>*/}
 
-              <p className="text-gray-600">
-                Withdrawals require compliance approval by the
-                Oniduuru Admin Team before Paystack transfers are executed.
-              </p>
-            </div>
+            {/*  <p className="text-gray-600">*/}
+            {/*    Withdrawals require compliance approval by the*/}
+            {/*    Oniduuru Admin Team before Paystack transfers are executed.*/}
+            {/*  </p>*/}
+            {/*</div>*/}
           </section>
 
           {/* CONCLUSION */}
